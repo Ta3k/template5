@@ -1,0 +1,40 @@
+name: Auto PR from Jekyll post
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+    paths:
+      - "_posts/**/*.md"
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Detect new post & read front matter
+        id: post
+        run: |
+          FILE=$(git diff --name-only HEAD~1 HEAD | grep "_posts/.*\.md" | head -n 1)
+
+          if [ -z "$FILE" ]; then
+            echo "No new post found"
+            exit 0
+          fi
+
+          TITLE=$(sed -n 's/^title: "\(.*\)"/\1/p' "$FILE")
+          DESC=$(sed -n 's/^description: "\(.*\)"/\1/p' "$FILE")
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "desc=$DESC" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: main
+          title: "${{ steps.post.outputs.title }}"
+          body: "${{ steps.post.outputs.desc }}"
