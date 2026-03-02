@@ -1,16 +1,18 @@
-title:              Clean Blog
+title:              Sklep b2b online
 email:              your-email@example.com
-description:        A Blog Theme by Start Bootstrap
+description:        Tu dowiesz się jaki jest najlepszy sklep b2b online, który oferuje szeroki wybór produktów i konkurencyjne ceny. Znajdziesz tu również porady dotyczące zakupów online oraz informacje o najnowszych trendach w branży e-commerce.
 author:             Start Bootstrap
 baseurl:            ""
-url:                "https://drukuj-w-3d.pl"
+url:                "https://sklep-b2b-online.pl/"
+languages:          ["pl"]
+default_lang:       "pl"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
-instagram_username:  
-linkedin_username:
+# twitter_username:   SBootstrap
+# github_username:    StartBootstrap
+# facebook_username:  StartBootstrap
+# instagram_username:  
+# linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
@@ -23,3 +25,4 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-multiple-languages-plugin
