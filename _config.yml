@@ -4,8 +4,8 @@ description:        Tu dowiesz się jaki jest najlepszy sklep b2b online, który
 author:             Start Bootstrap
 baseurl:            ""
 url:                "https://sklep-b2b-online.pl/"
-languages:          ["pl"]
-default_lang:       "pl"
+# languages:          ["pl"]
+# default_lang:       "pl"
 
 # Social Profiles
 # twitter_username:   SBootstrap
@@ -25,4 +25,4 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
-  - jekyll-multiple-languages-plugin
+  # - jekyll-multiple-languages-plugin
